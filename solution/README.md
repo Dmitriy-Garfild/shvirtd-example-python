@@ -82,7 +82,7 @@ See 'snap info docker' for additional versions.
 файл [compose.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/compose.yaml) был дополнен до версии [composeompose_v2.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v2.yaml)
 было развернуто еще несуолько контейнеров 
 
-"4conteiners.PNG"
+[4conteiners.PNG](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/4conteiners.PNG)
 
 однако nginx отказывается слушать порт 8090,  но порт 8080 слушается
 проверил контейнер  с nginx - внутри контейнера ссылка доступна по 172.0.0.1:8089, файлы успешно подменяются, но с моей хостовой машины нет...
