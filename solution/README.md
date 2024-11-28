@@ -91,6 +91,10 @@ See 'snap info docker' for additional versions.
 
 [port.PNG](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/port.PNG)
 
+ну и как результат вот такая таблица 
+
+db
+
 
 ### Для тестирования моей сборки необходимо склонировать [этот репозиторий](https://github.com/Dmitriy-Garfild/shvirtd-example-python.git) и запускать сборку из корневоцй директории  (в папке solution только те файлы которые необходимы для объяснения моих действий при решении)
 
