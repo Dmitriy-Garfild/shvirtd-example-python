@@ -79,7 +79,7 @@ See 'snap info docker' for additional versions.
 
 
 ## Решение 3
-файл compose.yaml был дополнен до версии compose_v2.yaml
+файл compose.yaml был дополнен до версии [composeompose_v2.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v2.yaml)
 было развернуто еще несуолько контейнеров 
 
 "4conteiners.PNG"
@@ -89,7 +89,7 @@ See 'snap info docker' for additional versions.
  в общем прошу помощи - нет идей.... может он только с виндой так работает...
 
 
-"port.PNG"
+[port.PNG](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/port.PNG)
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
