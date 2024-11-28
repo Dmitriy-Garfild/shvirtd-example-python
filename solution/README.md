@@ -47,7 +47,7 @@ See 'snap info docker' for additional versions.
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
 ---
 ## Решение 1
- созданы файлы compose1.yaml и composeompose_v1.yaml
+ созданы файлы [compose1.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose1.yaml) и [composeompose_v1.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v1.yaml)
  по какой то причине при использовагнии "x-deploy" (ompose1.yaml) контейнер с app  не может подключиться к базе данных и выдает ошибку "2024-11-28 15:33:09 web-1    | _mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'mysql:3306' (111)" однако я посмотрел через  docker compose config - все переменные присваиваются.
  было принято решение прокинуть переменные вот таким способом - (файл compose_v1.yaml) и тогда все заработало
 
