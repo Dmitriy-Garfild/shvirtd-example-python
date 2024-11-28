@@ -51,7 +51,7 @@ See 'snap info docker' for additional versions.
  по какой то причине при использовагнии "x-deploy" (ompose1.yaml) контейнер с app  не может подключиться к базе данных и выдает ошибку "2024-11-28 15:33:09 web-1    | _mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'mysql:3306' (111)" однако я посмотрел через  docker compose config - все переменные присваиваются.
  было принято решение прокинуть переменные вот таким способом - (файл compose_v1.yaml) и тогда все заработало
 
- "2conteiners.PNG"
+[ "2conteiners.PNG"](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/2conteiners.PNG)
 
 
 ## Задача 2 (*)
