@@ -91,6 +91,9 @@ See 'snap info docker' for additional versions.
 
 [port.PNG](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/port.PNG)
 
+
+### Для тестирования моей сборки необходимо 
+
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
 2. Подключитесь к Вм по ssh и установите docker.
@@ -99,7 +102,7 @@ See 'snap info docker' for additional versions.
 5. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
 6. В качестве ответа повторите  sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
 ## Решение 4
-файл setup.sh для скачки и запуска
+файл [setup.sh](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/setup.sh) для скачки и запуска
 
 
 ## Задача 5 (*)
