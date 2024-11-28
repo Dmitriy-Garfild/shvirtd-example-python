@@ -79,7 +79,7 @@ See 'snap info docker' for additional versions.
 
 
 ## Решение 3
-файл compose.yaml был дополнен до версии [composeompose_v2.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v2.yaml)
+файл [compose.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/compose.yaml) был дополнен до версии [composeompose_v2.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v2.yaml)
 было развернуто еще несуолько контейнеров 
 
 "4conteiners.PNG"
