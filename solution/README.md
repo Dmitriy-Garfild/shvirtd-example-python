@@ -120,9 +120,33 @@ See 'snap info docker' for additional versions.
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий .
 
+## Решение 6
+скачиваем
+docker pull hashicorp/terraform:latest
+загоняем в архив
+docker save hashicorp/terraform:latest -o terraform_image.tar
+ставим dive
+sudo snap install dive
+анализируем образ
+dive terraform_image.tar
+Создайте контейнер из образа
+container_id=$(docker create hashicorp/terraform:latest)
+Скопируйте бинарный файл terraform на локальную машину
+docker cp $container_id:/bin/terraform ./terraform
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
+
+## Решение 6.1
+скачиваем
+docker pull hashicorp/terraform:latest
+создаем свой контейнер
+container_id=$(docker create hashicorp/terraform:latest) - тут есть варианты но нужно знать id или имя контейнера
+копирование бинарного файла
+docker cp $container_id:/bin/terraform ./terraform
+
+
 
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
