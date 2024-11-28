@@ -93,7 +93,7 @@ See 'snap info docker' for additional versions.
 
 ну и как результат вот такая таблица 
 
-db
+[db](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/db.PNG)
 
 
 ### Для тестирования моей сборки необходимо склонировать [этот репозиторий](https://github.com/Dmitriy-Garfild/shvirtd-example-python.git) и запускать сборку из корневоцй директории  (в папке solution только те файлы которые необходимы для объяснения моих действий при решении)
