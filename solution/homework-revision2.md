@@ -129,6 +129,9 @@ Database changed
 
 mysql> 
 
+
+скриншот:
+
 [ "db2.PNG"](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/db2.PNG)
 
 
