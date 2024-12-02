@@ -154,16 +154,27 @@ See 'snap info docker' for additional versions.
 ## Решение 6
 скачиваем
 docker pull hashicorp/terraform:latest
-загоняем в архив
-docker save hashicorp/terraform:latest -o terraform_image.tar
+
 ставим dive
 sudo snap install dive
+sudo snap connect dive:docker-executables docker:docker-executables
+sudo snap connect dive:docker-daemon docker:docker-daemon
+
 анализируем образ
-dive terraform_image.tar
-Создайте контейнер из образа
-container_id=$(docker create hashicorp/terraform:latest)
-Скопируйте бинарный файл terraform на локальную машину
-docker cp $container_id:/bin/terraform ./terraform
+dive hashicorp/terraform:latest
+
+
+5b88db4c71cd9e5847e1cac4abca9ca93f4b98b62a6f9d8b9e1721648c396024 
+
+
+[teraform1](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/teraform1.PNG)
+
+
+загоняем в архив
+docker save hashicorp/terraform:latest -o terraform_image.tar
+
+выковыриваем из архива
+
 
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
