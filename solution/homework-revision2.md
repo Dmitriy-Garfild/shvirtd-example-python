@@ -205,6 +205,13 @@ docker save hashicorp/terraform:latest -o terraform_image.tar
 
 выковыриваем из архива
 
+dim@srv-000:~/my-project/shvirtd-example-python/blobs/sha256/bin$ ll
+total 88128
+drwxr-xr-x 2 root root     4096 Nov 27 07:39 ./
+drwxr-xr-x 3 root root     4096 Dec  2 12:13 ../
+-rwxr-xr-x 1 root root 90230936 Nov 26 21:47 terraform*
+dim@srv-000:~/my-project/shvirtd-example-python/blobs/sha256/bin$ 
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
