@@ -12,6 +12,8 @@ else
   git pull origin main  
 fi
 
+# на всякий случай
+chmod -R 755 "$DEST_DIR"
 
 cd "$DEST_DIR" 
 

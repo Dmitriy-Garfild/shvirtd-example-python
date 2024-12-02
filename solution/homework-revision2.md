@@ -55,17 +55,14 @@ See 'snap info docker' for additional versions.
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
 ---
 ## Решение 1
- созданы файлы [compose1.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose1.yaml) и [composeompose_v1.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v1.yaml)
- по какой то причине при использовагнии "x-deploy" (ompose1.yaml) контейнер с app  не может подключиться к базе данных и выдает ошибку "2024-11-28 15:33:09 web-1    | _mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'mysql:3306' (111)" однако я посмотрел через  docker compose config - все переменные присваиваются.
- было принято решение прокинуть переменные вот таким способом - (файл compose_v1.yaml) и тогда все заработало
-
-[ "2conteiners.PNG"](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/2conteiners.PNG)
 
 
 + Доработка ДЗ
 + работа переделана на ubuntu , создан файл
 + [compose.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/compose.yaml)
 + инструкции "x-deploy" начали работать
+
+
 
 
 ## Задача 2 (*)
@@ -93,6 +90,46 @@ See 'snap info docker' for additional versions.
 
 
 ## Решение 3
++ [compose.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/compose.yaml)
+
+
++ dim@srv-000:~/my-project/shvirtd-example-python$ docker ps 
++ CONTAINER ID   IMAGE                        COMMAND                  CREATED             STATUS             PORTS                      NAMES
++ 31fade5a143c   shvirtd-example-python-web   "python main.py"         53 minutes ago      Up 53 minutes                                 shvirtd-example-python-web-1
++ 9105080598d8   mysql:8                      "docker-entrypoint.s…"   53 minutes ago      Up 53 minutes      3306/tcp, 33060/tcp        shvirtd-example-python-db-1
++ 4e87436ba7b8   nginx:1.21.1                 "/docker-entrypoint.…"   About an hour ago   Up About an hour                              shvirtd-example-python-ingress-proxy-1
++ 4925a11767e6   haproxy:2.4                  "docker-entrypoint.s…"   About an hour ago   Up About an hour   127.0.0.1:8080->8080/tcp   shvirtd-example-python-reverse-proxy-1
+
++ база показывается уже на вирт машине в моей виртуальной среде, я пробовал зайти туда с других вирт машин подключенные через связанные и проксируемые интерфейсы
+
+| virtd              |
++--------------------+
+5 rows in set (0.00 sec)
+
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
++-----------------+
+| Tables_in_virtd |
++-----------------+
+| requests        |
++-----------------+
+1 row in set (0.00 sec)
+
++----+---------------------+--------------+
+| id | request_date        | request_ip   |
++----+---------------------+--------------+
+|  1 | 2024-12-02 08:29:39 | 10.0.2.2     |
+|  2 | 2024-12-02 08:30:02 | 10.0.2.2     |
+|  3 | 2024-12-02 09:06:38 | 192.168.1.14 |
+|  4 | 2024-12-02 09:06:44 | 192.168.1.14 |
++----+---------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+
+[ "db2.PNG"](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/db2.PNG)
 
 
 
@@ -103,21 +140,7 @@ See 'snap info docker' for additional versions.
 
 
 
-файл [compose.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/compose.yaml) был дополнен до версии [composeompose_v2.yaml](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/compose_v2.yaml)
-было развернуто еще несуолько контейнеров 
 
-[4conteiners.PNG](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/4conteiners.PNG)
-
-однако nginx отказывается слушать порт 8090,  но порт 8080 слушается
-проверил контейнер  с nginx - внутри контейнера ссылка доступна по 172.0.0.1:8089, файлы успешно подменяются, но с моей хостовой машины нет...
- в общем прошу помощи - нет идей.... может он только с виндой так работает...
-
-
-[port.PNG](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/port.PNG)
-
-ну и как результат вот такая таблица 
-
-[db](https://github.com/Dmitriy-Garfild/shvirtd-example-python/blob/main/solution/db.PNG)
 
 
 
